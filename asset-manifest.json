@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.32b02ad1.chunk.css",
-    "main.js": "/static/js/main.a7c329a8.chunk.js",
-    "main.js.map": "/static/js/main.a7c329a8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e7310a31.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e7310a31.js.map",
-    "static/js/2.368f7cd2.chunk.js": "/static/js/2.368f7cd2.chunk.js",
-    "static/js/2.368f7cd2.chunk.js.map": "/static/js/2.368f7cd2.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.8e2ba28cba6a210b322157b51a584e0c.js": "/precache-manifest.8e2ba28cba6a210b322157b51a584e0c.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.32b02ad1.chunk.css.map": "/static/css/main.32b02ad1.chunk.css.map",
-    "static/js/2.368f7cd2.chunk.js.LICENSE.txt": "/static/js/2.368f7cd2.chunk.js.LICENSE.txt",
-    "static/media/chat.svg": "/static/media/chat.c2563ca2.svg",
-    "static/media/heart.svg": "/static/media/heart.73140d21.svg",
-    "static/media/researching.svg": "/static/media/researching.88bac547.svg"
+    "main.css": "/BUZZ/static/css/main.32b02ad1.chunk.css",
+    "main.js": "/BUZZ/static/js/main.fd822c7e.chunk.js",
+    "main.js.map": "/BUZZ/static/js/main.fd822c7e.chunk.js.map",
+    "runtime-main.js": "/BUZZ/static/js/runtime-main.e53b6842.js",
+    "runtime-main.js.map": "/BUZZ/static/js/runtime-main.e53b6842.js.map",
+    "static/js/2.2987ddfb.chunk.js": "/BUZZ/static/js/2.2987ddfb.chunk.js",
+    "static/js/2.2987ddfb.chunk.js.map": "/BUZZ/static/js/2.2987ddfb.chunk.js.map",
+    "index.html": "/BUZZ/index.html",
+    "precache-manifest.e597b9113eb5d59353f45f5a72460a5c.js": "/BUZZ/precache-manifest.e597b9113eb5d59353f45f5a72460a5c.js",
+    "service-worker.js": "/BUZZ/service-worker.js",
+    "static/css/main.32b02ad1.chunk.css.map": "/BUZZ/static/css/main.32b02ad1.chunk.css.map",
+    "static/js/2.2987ddfb.chunk.js.LICENSE.txt": "/BUZZ/static/js/2.2987ddfb.chunk.js.LICENSE.txt",
+    "static/media/chat.svg": "/BUZZ/static/media/chat.c2563ca2.svg",
+    "static/media/heart.svg": "/BUZZ/static/media/heart.73140d21.svg",
+    "static/media/researching.svg": "/BUZZ/static/media/researching.88bac547.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e7310a31.js",
-    "static/js/2.368f7cd2.chunk.js",
+    "static/js/runtime-main.e53b6842.js",
+    "static/js/2.2987ddfb.chunk.js",
     "static/css/main.32b02ad1.chunk.css",
-    "static/js/main.a7c329a8.chunk.js"
+    "static/js/main.fd822c7e.chunk.js"
   ]
 }
