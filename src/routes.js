@@ -10,10 +10,10 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/buzz" exact  component={Home} />
-                <Route path="/buzz/dashboard"  component={Dashboard} />
-                <Route path="/buzz/login"  component={Login} />
-                <Route path="/buzz/register"  component={Register} />
+                <Route path="/BUZZ" exact  component={Home} />
+                <Route path="/BUZZ/dashboard"  component={Dashboard} />
+                <Route path="/BUZZ/login"  component={Login} />
+                <Route path="/BUZZ/register"  component={Register} />
             </Switch>
         </BrowserRouter>
     );
