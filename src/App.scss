@@ -1,0 +1,60 @@
+:root {
+  --color-common-background: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background: #f8d660;
+  -webkit-font-smoothing: antialiased !important;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #666;
+}
+
+::selection {
+  background: #fdf; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #fdf; /* Gecko Browsers */
+}
+
+body,
+input,
+button {
+  font-family: 'Lato', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: calc(100% - 240px);
+}
