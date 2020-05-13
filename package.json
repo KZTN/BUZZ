@@ -1,5 +1,6 @@
 {
-  "name": "web",
+  "name": "buzz",
+  "homepage": "https://kztn.github.io/BUZZ",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
