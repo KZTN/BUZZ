@@ -25,6 +25,9 @@
 <p align="center">
   <img alt="BUZZ" src=".github/BUZZ.png" width="100%">
 </p>
+## Sobre o projeto
+Essa é uma iniciativa com incentivo do (hackcovid-19)[hackcovid-19.devpost.com/] para a criação de um site de vouchers para o enfrentamento da crise da pandemia do coronavirus. Para mais informações a respeito do projeto, veja o (mural de desafios)[http://www.cbpf.br/hackcovid19/Hackcovid_Desafios_Empresas_e_com%C3%A9rcio.html]
+
 
 ## Começando...
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
