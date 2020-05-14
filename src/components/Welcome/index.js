@@ -4,9 +4,8 @@ import Heartsvg from '../../assets/heart.svg'
 import Emoji from '../../interfaces/emoji';
 export default function Welcome() {
   return (
-    <main className="welcome">
+    <section id="welcome">
       <div className="box-left">
-        <header>
           <div className="box-header">
             <h1>
               Compre um vale-presente hoje, para o seu 
@@ -16,7 +15,6 @@ export default function Welcome() {
           <div className="box-text">
               <span>Com a situação não anda fácil, estamos nos adaptando a você.</span>
           </div>
-          </header>
           <div className="box-moreinfo">
               <span>Saiba Mais</span>
           </div>
@@ -24,6 +22,6 @@ export default function Welcome() {
       <div className="box-right">
           <img src={Heartsvg}/>
       </div>
-    </main>
+    </section>
   );
 }

@@ -1,34 +1,34 @@
-main.welcome {
+section#welcome {
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-main.welcome .box-left {
+section#welcome .box-left {
   padding-top: 40px;
   margin: auto 0;
   width: 50%;
   text-align: left;
 }
 
-main.welcome .box-left header .box-header h1 {
+section#welcome .box-left .box-header h1 {
   color: #080808;
   font-weight: 400;
   font-size: 64px;
 }
 
-main.welcome .box-left header .box-header strong {
+section#welcome .box-left .box-header strong {
   font-weight: 900;
 }
 
-main.welcome .box-left header .box-text {
+section#welcome .box-left .box-text {
   padding-top: 25px;
   font-size: 18px;
 }
 
-main.welcome .box-left .box-moreinfo {
+section#welcome .box-left .box-moreinfo {
   font-weight: bold;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -45,17 +45,17 @@ main.welcome .box-left .box-moreinfo {
   }
 }
 
-main.welcome .box-left .box-moreinfo span {
+section#welcome .box-left .box-moreinfo span {
   color: #fff;
   font-size: 18px;
 }
 
-main.welcome .box-right {
+section#welcome .box-right {
   width: 50%;
   margin-top: 40px;
   height: 500px;
 }
-main.welcome .box-right img {
+section#welcome .box-right img {
   width: 100%;
   height: 100%;
 }
