@@ -33,7 +33,7 @@
 
 ## Sobre o projeto
 
-Essa é uma iniciativa com incentivo do hackathon [hackcovid-19](hackcovid-19.devpost.com/) para a criação de um site de vouchers para o enfrentamento da crise da pandemia do coronavirus. Para mais informações a respeito do projeto, veja o [mural de desafios](http://www.cbpf.br/hackcovid19/Hackcovid_Desafios_Empresas_e_com%C3%A9rcio.html).
+Essa é uma iniciativa com incentivo do hackathon [hackcovid-19](https://hackcovid-19.devpost.com/) para a criação de um site de vouchers para o enfrentamento da crise da pandemia do coronavirus. Para mais informações a respeito do projeto, veja o [mural de desafios](http://www.cbpf.br/hackcovid19/Hackcovid_Desafios_Empresas_e_com%C3%A9rcio.html).
 
 
 
