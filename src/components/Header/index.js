@@ -14,7 +14,7 @@ export default function Header() {
         </div>
       <div className="box-actions">
           <div className="box-account">
-             <span>Minha conta</span>
+          <Link to="/BUZZ/profile"><span>Minha conta</span></Link>
           </div>
           <div className="box-voucher">
              <Link to="/BUZZ/vouchers"><span>Vouchers</span></Link>

@@ -52,14 +52,9 @@ a {
   color: inherit;
 }
 .container {
-  width: 100%;
   margin: 0 auto;
-  border-radius: 8px;
   align-items: center;
   display: flex;
   flex-direction: column;
-}
-
-.content {
   width: calc(100% - 240px);
 }

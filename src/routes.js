@@ -5,6 +5,7 @@ import Vouchers from './pages/Vouchers';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import Profile from './pages/Profile'
 
 export default function Routes() {
     return (
@@ -14,6 +15,7 @@ export default function Routes() {
                 <Route path="/BUZZ/vouchers" component={Vouchers} />
                 <Route path="/BUZZ/login" component={Login} />
                 <Route path="/BUZZ/register" component={Register} />
+                <Route path="/BUZZ/profile" component={Profile} />
             </Switch>
         </BrowserRouter>
     );

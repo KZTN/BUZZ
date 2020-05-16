@@ -2,8 +2,19 @@ import React, { useState } from 'react';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaUser } from 'react-icons/fa';
-export default function Litenav() {
+export default function Litenav({onSubmit}) {
   const [boxactions, setBoxactions] = useState(false);
+  const [inputfield, setInputfield] = useState();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log('o valor que eu estou jogando é:' + inputfield);
+    await onSubmit({
+      inputfield
+      });
+      setInputfield('');
+  }
+
   function handleActiveBoxActions() {
     console.log('ta desativado');
 
@@ -24,11 +35,13 @@ export default function Litenav() {
           color="#888"
           style={{ margin: 'auto 0 auto 10px' }}
         />
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="search"
             placeholder="Busque por categorias"
+            value={inputfield}
+            onChange={e => setInputfield(e.target.value)}
           />
         </form>
       </div>
@@ -45,7 +58,7 @@ export default function Litenav() {
           onMouseOut={handleDisableBoxActions}
         >
           <div className="action-item">
-            <a href="#">Minha Conta</a>
+            <Link to="/BUZZ/profile">Minha Conta</Link>
           </div>
           <div className="action-item">
             <a href="#">Favoritos</a>
