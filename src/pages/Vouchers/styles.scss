@@ -16,11 +16,12 @@ section#vouchers .content {
 }
 
 section#vouchers .content .box-info-results {
+  width: 650px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
-  color: #222;
+  color: #333;
 }
 
 section#vouchers .content .box-info-results .box-revert {
