@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Innerheader from '../../components/Innerheader';
-import { FaHeart, FaStar, FaPen, FaTicketAlt } from 'react-icons/fa';
+import { FaHeart, FaStar, FaPen } from 'react-icons/fa';
 import { GiTicket } from 'react-icons/gi';
-
-
 import './styles.scss';
 
 export default function Profile() {
+
+  
   return (
     <section id="profile">
       <Innerheader />
