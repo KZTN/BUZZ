@@ -1,19 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './styles.scss'
-export default function Card({title, seller, photo, description, hashtags}) {
+import ModalVoucher from '../ModalVoucher'
+export default function Card({voucher}) {
+  const [modalisopen, setModalisopen] = useState(false);
+  function evoqueModal() {
+    setModalisopen(true)
+  }
+  async function handleCloseModal(data) {
+    setModalisopen(false);
+  }
 return (
-    <div className="card">
+    <>
+    { modalisopen ? <ModalVoucher voucher={voucher} onClick={handleCloseModal}/> : null }
+    <div className="card" >
     <div className="card-header">
-      <div className="title">
-        <h3>{title}</h3>
+      <div className="title" onClick={() => evoqueModal()}>
+        <h3>{voucher.name}</h3>
       </div>
       <div className="seller">
-        <span>{seller}</span>
+        <span>{voucher.seller.name}</span>
       </div>
     </div>
-    <div className="card-img">
+    <div className="card-img" onClick={() => evoqueModal()}>
       <img
-        src={photo}
+        src={voucher.photo}
         alt=""
         srcset=""
       />
@@ -21,15 +31,16 @@ return (
     <div className="card-info">
       <div className="description">
         <p>
-          {description}
+          {voucher.description}
         </p>
       </div>
       <div className="hashtags">
         <span>
-          <strong>{hashtags}</strong>
+          <strong>{voucher.hashtags}</strong>
         </span>
       </div>
     </div>
     </div>
+    </>
 );
 }

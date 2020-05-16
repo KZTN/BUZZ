@@ -7,6 +7,23 @@ section#vouchers {
 
 section#vouchers .content {
   margin: 160px auto 0 auto;
-  width: 650px;
+  width: 1000px;
   max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+section#vouchers .content .box-info-results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+section#vouchers .content .box-info-results .box-revert {
+  cursor: pointer;
+  text-decoration: underline;
 }

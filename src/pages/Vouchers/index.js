@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Litenav from '../../components/Litenav';
 import Card from '../../components/Card';
-import './styles.scss';
 import api from '../../services/api'
+import './styles.scss';
 export default function Vouchers() {
-  const [modalIsOpen,setIsOpen] = useState(false);
   const [city, setCity] = useState('');
   const [vouchers, setVouchers] = useState([]);
-  const [textfield, setTextfiled] = useState('');
-  const [inputfield, setInputfield] = useState('');
+  const [filter, setFilter] = useState('');
   async function getCords() {
-    const apigeolocation = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el=>el.json())
-    const apicity = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${apigeolocation.location.lat}&longitude=${apigeolocation.location.lng}&localityLanguage=en`).then(el=>el.json())
-    setCity(apicity.locality);
-    const response = await api.get(`/vouchers/cidade/${apicity.locality}`);
-    setVouchers(response.data);
+    if(!city) {
+      const apigeolocation = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el=>el.json())
+      const apicity = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${apigeolocation.location.lat}&longitude=${apigeolocation.location.lng}&localityLanguage=en`).then(el=>el.json())
+      setCity(apicity.locality);
+      const response = await api.get(`/vouchers/cidade/${apicity.locality}`);
+      setVouchers(response.data);
+    } else {
+      const response = await api.get(`/vouchers/cidade/${city}`);
+      setVouchers(response.data);
+      setFilter('');
+    }
   }
 
   useEffect(() => {
@@ -34,18 +38,25 @@ export default function Vouchers() {
     );
   }, []);
 
-
   async function handleInputField(data) {
-    console.log('o valor que eu recebi foi: ' + data.inputfield);
-    const response = await api.get(`/vouchers/cidade/${city}/${data.inputfield}`);
-    setVouchers(response.data)
+    const response = await api.get(`/vouchers/cidade/${city}/filtro/${data.inputfield}`);
+    setVouchers(response.data);
+    setFilter(data.inputfield);
   }
     return (
     <section id="vouchers">
       <Litenav onSubmit={handleInputField} />
       <div className="content">
+      <div className="box-info-results">
+        <div className="info-results">
+        <span>{filter? `Resultados da categoria: ${filter}` : null}</span>
+        </div>
+        <div className="box-revert" onClick={getCords}>
+          <span>{filter? `Remover filtros de pesquisa` : null}</span>
+        </div>
+      </div>
           {vouchers.map(voucher => (
-            <Card key={voucher._id} title={voucher.name} photo={voucher.photo} description={voucher.description} hashtags={voucher.hashtags} seller={voucher.seller.name}/>
+            <Card key={voucher._id} voucher={voucher}/>
           ))}
       </div>
     </section>
