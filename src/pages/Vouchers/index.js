@@ -5,6 +5,7 @@ import api from '../../services/api'
 import './styles.scss';
 export default function Vouchers() {
   const [city, setCity] = useState('');
+  const [isloading, setIsloading] = useState(true);
   const [vouchers, setVouchers] = useState([]);
   const [filter, setFilter] = useState('');
   async function getCords() {
@@ -14,12 +15,12 @@ export default function Vouchers() {
       setCity(apicity.locality);
       const response = await api.get(`/vouchers/cidade/${apicity.locality}`);
       setVouchers(response.data);
-      console.log(response.data);
+      setIsloading(false);
     } else {
       const response = await api.get(`/vouchers/cidade/${city}`);
       setVouchers(response.data);
       setFilter('');
-      console.log(response.data);
+      setIsloading(false);
     }
   }
 
@@ -58,7 +59,7 @@ export default function Vouchers() {
           <span>{filter? `Remover filtros de pesquisa` : null}</span>
         </div>
       </div>
-      {vouchers.map === null? null : <h1>Desculpe, não encontramos nada em sua região :(</h1>}
+      {vouchers.length === 0 && !isloading? <h1 style={{marginTop: 20}}>Desculpe, não encontramos nada em sua região :(</h1> : null }
           {vouchers.map(voucher => (
             <Card key={voucher._id} voucher={voucher}/>
           ))}
