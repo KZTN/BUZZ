@@ -42,6 +42,7 @@ export default function Vouchers() {
     const response = await api.get(`/vouchers/cidade/${city}/filtro/${data.inputfield}`);
     setVouchers(response.data);
     setFilter(data.inputfield);
+    window.scrollTo(0, 0);
   }
     return (
     <section id="vouchers">

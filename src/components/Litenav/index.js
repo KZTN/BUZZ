@@ -26,9 +26,11 @@ export default function Litenav({onSubmit}) {
   }
   return (
     <div className="lite-nav">
+      <Link to="/BUZZ">
       <div className="box-logo">
         <h3>buzz</h3>
       </div>
+      </Link>
       <div className="box-search">
         <FaSearch
           size={14}

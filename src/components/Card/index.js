@@ -36,7 +36,9 @@ return (
       </div>
       <div className="hashtags">
         <span>
-          <strong>{voucher.hashtags}</strong>
+          {voucher.hashtags.map(hashtag => (
+            <strong>#{hashtag} </strong>
+          ))}
         </span>
       </div>
     </div>
