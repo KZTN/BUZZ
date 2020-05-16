@@ -10,7 +10,7 @@ section#login {
 section#login .box-form {
   margin-top: -12vh;
   box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.15);
-  height: 400px;
+  height: 450px;
   color: #444;
   width: 450px;
   background: #ffffff;
@@ -31,9 +31,13 @@ section#login .box-form input {
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
+  &:required {
+    box-shadow: none;
+  }
 }
 
 section#login .box-form .box-content form button {
+  margin-top: 25px;
   background: #3483fa;
   border: 0;
   border-radius: 8px;
@@ -66,8 +70,8 @@ section#login .box-signup span u {
 
 section#login .box-help {
   color: #444;
-  width: 350px;
-  padding-top: 3rem;
+  width: 380px;
+  margin-top: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

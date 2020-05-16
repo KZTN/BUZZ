@@ -38,11 +38,26 @@ section#profile .content .me .avatar img {
   height: 100%;
 }
 
-section#profile .content .me .box-greetings span {
+section#profile .content .me .box-greetings {
   color: #333;
   font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+section#profile .content .me .box-greetings .logout button {
+  margin-left: 5px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  -moz-transform: scaleX(-1); /* Gecko */
+  -o-transform: scaleX(-1); /* Opera */
+  -webkit-transform: scaleX(-1); /* Webkit */
+  transform: scaleX(-1); /* Standard */
 
+  filter: FlipH; /* IE 6/7/8 */
+}
 section#profile .content .box-actions {
   margin-top: 50px;
   display: grid;

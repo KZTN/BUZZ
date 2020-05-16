@@ -2,11 +2,34 @@ import React, {useState, useEffect} from 'react';
 import Innerheader from '../../components/Innerheader';
 import { FaHeart, FaStar, FaPen } from 'react-icons/fa';
 import { GiTicket } from 'react-icons/gi';
+import { FiLogOut } from 'react-icons/fi';
+import {useCookies} from 'react-cookie'
+import api from '../../services/api';
 import './styles.scss';
 
-export default function Profile() {
+export default function Profile({history}) {
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [name, setName] = useState('');
+  const [thumbnail, setThumbnail] = useState('https://media.discordapp.net/attachments/697512026251067472/711345678885847140/user-solid.png');
+  function handleLogout() {
+    removeCookie('token', { path: '/' });
+    history.push('/BUZZ'); 
+  }
+useEffect(() => {
+  async function getUserData() {
+    const response = await api.get('/user', {headers: { Authorization: `Bearer ${cookies.token}` }});
+    setName(response.data.name);
+    if(response.data.thumbnail) {
+      setThumbnail(response.data.thumbnail);
+    }
+  }
+  if(cookies.token) {
+    getUserData();
+  } else {
+    history.push('/BUZZ/login');
+  }
+}, []);
 
-  
   return (
     <section id="profile">
       <Innerheader />
@@ -14,14 +37,15 @@ export default function Profile() {
         <div className="me">
           <div className="avatar">
             <img
-              src="https://avatars0.githubusercontent.com/u/6463299?s=400&u=4461e9ccc7bb327fc8183a09c3da015c832924d6&v=4"
+              src={thumbnail}
               alt="avatar"
             />
           </div>
           <div className="box-greetings">
             <span>
-              Olá, <strong>Kaio César</strong>
+              Olá, <strong>{name} </strong> 
             </span>
+            <div className="logout"><button title="Sair" onClick={handleLogout}> <FiLogOut size={14} color="#000" /></button></div>
           </div>
         </div>
         <div className="box-actions">

@@ -14,10 +14,12 @@ export default function Vouchers() {
       setCity(apicity.locality);
       const response = await api.get(`/vouchers/cidade/${apicity.locality}`);
       setVouchers(response.data);
+      console.log(response.data);
     } else {
       const response = await api.get(`/vouchers/cidade/${city}`);
       setVouchers(response.data);
       setFilter('');
+      console.log(response.data);
     }
   }
 
@@ -56,6 +58,7 @@ export default function Vouchers() {
           <span>{filter? `Remover filtros de pesquisa` : null}</span>
         </div>
       </div>
+      {vouchers.map === null? null : <h1>Desculpe, não encontramos nada em sua região :(</h1>}
           {vouchers.map(voucher => (
             <Card key={voucher._id} voucher={voucher}/>
           ))}
