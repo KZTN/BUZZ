@@ -30,7 +30,7 @@
 ## :warning: Atenção
 O projeto ainda está em fase de prototipação. Embora eu tenha muito interesse, não há uma previsão clara para uma release de produção(carece de vários incentivos nos quais não possuo no momento, certificações, testes, etc), o projeto segue hoje em dia basicamente como um stand-alone project. 
 
-> Essa é uma versão inicial do README, futuros tópicos e pontos setão colocados assim que novos conteudos forem desenvolvidos.
+> Essa é uma versão inicial do README, futuros tópicos e pontos serão colocados assim que novos conteudos forem desenvolvidos.
 
 > A previsão para a finalização do protótipo está prevista para o mês de junho.
 
