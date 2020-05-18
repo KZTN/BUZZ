@@ -30,7 +30,7 @@
 
 ## :computer: Projeto
 
-Buzz é um sistema de venda de vouchers que surge para conectar donos de serviços e de bens com seus clientes. Garantindo a sobrevivência do setor de mercado fragilizado com a pandemia e garantindo descontos para o consumidor.
+Buzz é um sistema de venda de vouchers que surge para conectar donos de bens e serviços com seus clientes. Garantindo a sobrevivência do setor de mercado fragilizado com a pandemia e garantindo descontos para o consumidor.
 
 ## :thinking: Motivo
 
