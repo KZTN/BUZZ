@@ -27,6 +27,10 @@
   <img alt="BUZZ" src=".github/BUZZ.png" width="100%">
 </p>
 
+## :warning: Atenção
+O projeto ainda está em fase de prototipação. Embora eu tenha muito interesse, não há uma previsão clara para uma release de produção(carece de vários incentivos nos quais não possuo no momento, certificações, testes, etc), o projeto segue hoje em dia basicamente como um stand-alone project. 
+
+> A previsão para a finalização do protótipo está prevista para o mês de junho.
 
 ## :computer: Projeto
 
