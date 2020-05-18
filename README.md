@@ -62,7 +62,7 @@ git clone https://github.com/KZTN/BUZZ.git
 Navegando até a pasta do projeto:
 
 ```
-cd COVID-RN
+cd BUZZ
 ```
 
 Baixando as dependências do projeto:
