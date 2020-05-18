@@ -27,15 +27,14 @@
   <img alt="BUZZ" src=".github/BUZZ.png" width="100%">
 </p>
 
-## Atenção
 
-> O projeto está em fase inicial de desenvolvimento, será construído um prorótipo até a data de exibição (18/05/2020)
+## :computer: Projeto
 
-## Sobre o projeto
+Buzz é um sistema de venda de vouchers que surge para conectar donos de serviços e de bens com seus clientes. Garantindo a sobrevivência do setor de mercado fragilizado com a pandemia e garantindo descontos para o consumidor.
 
-Essa é uma iniciativa com incentivo do hackathon [hackcovid-19](https://hackcovid-19.devpost.com/) para a criação de um site de vouchers para o enfrentamento da crise da pandemia do coronavirus. Para mais informações a respeito do projeto, veja o [mural de desafios](http://www.cbpf.br/hackcovid19/Hackcovid_Desafios_Empresas_e_com%C3%A9rcio.html).
+## :thinking: Motivo
 
-
+Diante da dificuldade em que setores de bens e serviços se encontram para conseguir manter suas vendas enfrentadas pela paralisação de suas antividades devido a quarentena, muitas empresas estão articulando seu comércio para que não venham a falir ou fechar suas portas. Uma dessas alternativas de negócio que surge e hoje está em alta é a venda de vouchers, onde são ofertados serviços ou produtos sob venda antecipada com descontos atraentes para os clientes, que nos dias de hoje, buscam produtos e serviços que retribua maior razão de custo e benefício.
 
 ## Começando...
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
