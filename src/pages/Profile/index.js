@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Innerheader from '../../components/Innerheader';
+import InnerHeader from '../../components/InnerHeader';
 import { FaHeart, FaStar, FaPen, FaCamera } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 import { GiTicket } from 'react-icons/gi';
@@ -61,7 +61,7 @@ export default function Profile({ history }) {
 
   return (
     <section id="profile">
-      <Innerheader />
+      <InnerHeader />
       <div className="content">
         <div className="me">
           <form action=""></form>

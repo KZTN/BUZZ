@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Innerheader from '../../components/Innerheader';
+import InnerHeader from '../../components/InnerHeader';
 import { FaCamera, FaArrowLeft } from 'react-icons/fa';
 
 import { useCookies } from 'react-cookie';
@@ -99,7 +99,7 @@ export default function Credentials({ history }) {
 
   return (
     <section id="credentials">
-      <Innerheader />
+      <InnerHeader />
       <div className="content">
         <div className="me">
           <div

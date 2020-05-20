@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Innerheader from '../../components/Innerheader';
+import InnerHeader from '../../components/InnerHeader';
 import api from '../../services/api';
 import './styles.scss';
 import { useCookies } from 'react-cookie';
@@ -43,7 +43,7 @@ export default function Login({ history }) {
   }, []);
   return (
     <section id="login">
-      <Innerheader />
+      <InnerHeader />
       <div className="box-form">
         <div className="box-content">
           <div className="form-title">
