@@ -27,15 +27,20 @@
   <img alt="BUZZ" src=".github/BUZZ.png" width="100%">
 </p>
 
-## Atenção
+## :warning: Atenção
+O projeto ainda está em fase de prototipação. Embora eu tenha muito interesse, não há uma previsão clara para uma release de produção(carece de vários incentivos nos quais não possuo no momento, certificações, testes, etc), o projeto segue hoje em dia basicamente como um stand-alone project. 
 
-> O projeto está em fase inicial de desenvolvimento, será construído um prorótipo até a data de exibição (18/05/2020)
+> Essa é uma versão inicial do README, futuros tópicos e pontos serão colocados assim que novos conteudos forem desenvolvidos.
 
-## Sobre o projeto
+> A previsão para a finalização do protótipo está prevista para o mês de junho.
 
-Essa é uma iniciativa com incentivo do hackathon [hackcovid-19](https://hackcovid-19.devpost.com/) para a criação de um site de vouchers para o enfrentamento da crise da pandemia do coronavirus. Para mais informações a respeito do projeto, veja o [mural de desafios](http://www.cbpf.br/hackcovid19/Hackcovid_Desafios_Empresas_e_com%C3%A9rcio.html).
+## :computer: Projeto
 
+Buzz é um sistema de venda de vouchers que surge para conectar donos de bens e serviços com seus clientes. Garantindo a sobrevivência do setor de mercado fragilizado com a pandemia e garantindo descontos para o consumidor.
 
+## :thinking: Motivo
+
+Diante da dificuldade em que setores de bens e serviços se encontram para conseguir manter suas vendas enfrentadas pela paralisação de suas antividades devido a quarentena, muitas empresas estão articulando seu comércio para que não venham a falir ou fechar suas portas. Uma dessas alternativas de negócio que surge e hoje está em alta é a venda de vouchers, onde são ofertados serviços ou produtos sob venda antecipada com descontos atraentes para os clientes, que nos dias de hoje, buscam produtos e serviços que retribua maior razão de custo e benefício.
 
 ## Começando...
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
@@ -59,7 +64,7 @@ git clone https://github.com/KZTN/BUZZ.git
 Navegando até a pasta do projeto:
 
 ```
-cd COVID-RN
+cd BUZZ
 ```
 
 Baixando as dependências do projeto:
