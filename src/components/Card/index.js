@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import './styles.scss'
 import ModalVoucher from '../ModalVoucher'
-export default function Card({voucher}) {
+export default function Card({user, voucher}) {
   const [modalisopen, setModalisopen] = useState(false);
   function evoqueModal() {
     setModalisopen(true)
   }
-  async function handleCloseModal(data) {
+  function handleCloseModal(data) {
     setModalisopen(false);
   }
 return (
     <>
-    { modalisopen ? <ModalVoucher voucher={voucher} onClick={handleCloseModal}/> : null }
+    { modalisopen ? <ModalVoucher voucher={voucher} user={user} onClick={handleCloseModal}/> : null }
     <div className="card" >
     <div className="card-header">
       <div className="title" onClick={() => evoqueModal()}>
@@ -36,8 +36,8 @@ return (
       </div>
       <div className="hashtags">
         <span>
-          {voucher.hashtags.map(hashtag => (
-            <strong>#{hashtag} </strong>
+          {voucher.hashtags.map((hashtag, index) => (
+            <strong key={index}>#{hashtag} </strong>
           ))}
         </span>
       </div>
