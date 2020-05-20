@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Litenav from '../../components/Litenav';
 import Card from '../../components/Card';
 import api from '../../services/api'
+import { useCookies } from 'react-cookie';
+
 import './styles.scss';
-export default function Vouchers() {
+export default function Vouchers({history}) {
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const [city, setCity] = useState('');
+  const [user, setUser] = useState(null);
   const [isloading, setIsloading] = useState(true);
   const [vouchers, setVouchers] = useState([]);
   const [filter, setFilter] = useState('');
@@ -26,7 +30,7 @@ export default function Vouchers() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (response) => {
+      () => {
         getCords();
       },
       (err) => {
@@ -41,6 +45,26 @@ export default function Vouchers() {
     );
   }, []);
 
+  useEffect(() => {
+    async function getUserData() {
+      await api
+        .get('/user', {
+          headers: { Authorization: `Bearer ${cookies.token}` },
+        })
+        .then((response) => {
+          setUser(response.data);
+          console.log(response.data.favorites);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    if (cookies.token) {
+      getUserData();
+    } else {
+      history.push('/BUZZ/login');
+    }
+  }, []);
   async function handleInputField(data) {
     const response = await api.get(`/vouchers/cidade/${city}/filtro/${data.inputfield}`);
     setVouchers(response.data);
@@ -61,7 +85,7 @@ export default function Vouchers() {
       </div>
       {vouchers.length === 0 && !isloading? <h1 style={{marginTop: 20}}>Desculpe, não encontramos nada em sua região :(</h1> : null }
           {vouchers.map(voucher => (
-            <Card key={voucher._id} voucher={voucher}/>
+            <Card key={voucher._id} voucher={voucher} user={user}/>
           ))}
       </div>
     </section>

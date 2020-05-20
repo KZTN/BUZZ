@@ -22,7 +22,7 @@ section#login .box-form .box-content {
   padding: 3rem;
 }
 section#login .box-form .box-content .form-title {
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 section#login .box-form input {
   width: 100%;
@@ -53,6 +53,7 @@ section#login .box-form .box-content form button {
 }
 
 section#login .box-signup {
+  margin-top: auto;
   box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.15);
 
   background: #f5f5f2;

@@ -66,6 +66,7 @@ export default function Login({ history }) {
                 type="password"
                 name="password"
                 id="password"
+                minLength="6"
                 placeholder="Sua senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
