@@ -2,17 +2,24 @@ import React, { useState } from 'react';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaUser } from 'react-icons/fa';
-export default function Litenav({onSubmit}) {
+import { useCookies } from 'react-cookie';
+
+export default function Litenav({ onSubmit, user, history }) {
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+
   const [boxactions, setBoxactions] = useState(false);
   const [inputfield, setInputfield] = useState();
-
+  function handleLogout() {
+    removeCookie('token', { path: '/' });
+    history.push('/BUZZ');
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     console.log('o valor que eu estou jogando é:' + inputfield);
     await onSubmit({
-      inputfield
-      });
-      setInputfield('');
+      inputfield,
+    });
+    setInputfield('');
   }
 
   function handleActiveBoxActions() {
@@ -27,9 +34,9 @@ export default function Litenav({onSubmit}) {
   return (
     <div className="lite-nav">
       <Link to="/BUZZ">
-      <div className="box-logo">
-        <h3>buzz</h3>
-      </div>
+        <div className="box-logo">
+          <h3>buzz</h3>
+        </div>
       </Link>
       <div className="box-search">
         <FaSearch
@@ -43,32 +50,36 @@ export default function Litenav({onSubmit}) {
             name="search"
             placeholder="Busque por categorias"
             value={inputfield}
-            onChange={e => setInputfield(e.target.value)}
+            onChange={(e) => setInputfield(e.target.value)}
           />
         </form>
       </div>
       <div className="box-actions" onMouseLeave={handleDisableBoxActions}>
         <button onClick={handleActiveBoxActions}>
-          <span>Olá visitante</span>
+          <span>Olá {user ? user.name : 'visitante'}</span>
         </button>
         <div className="icon-user">
-          <FaUser size={25} color="#888" />
+          {user ? (
+            <img src={user.thumbnail} />
+          ) : (
+            <FaUser size={25} color="#888" />
+          )}
         </div>
         <div
           className={boxactions ? 'actions active' : 'actions disable'}
           onMouseOver={handleActiveBoxActions}
           onMouseOut={handleDisableBoxActions}
         >
-          <div className="action-item">
-            <Link to="/BUZZ/profile">Minha Conta</Link>
-          </div>
-          <div className="action-item">
-            <a href="#">Favoritos</a>
-          </div>
+          <Link to="/BUZZ/profile">
+            <div className="action-item">Minha Conta</div>
+          </Link>
+          <Link to="/BUZZ/profile/favorites">
+            <div className="action-item">Favoritos</div>
+          </Link>
           <div className="action-item">
             <a href="#">Vender</a>
           </div>
-          <div className="action-item">
+          <div className="action-item" onClick={handleLogout}>
             <a href="#">Sair</a>
           </div>
         </div>
