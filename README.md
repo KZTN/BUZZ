@@ -79,3 +79,29 @@ Rodando o projeto:
 yarn start
 ```
 Visite http://localhost:3000 com o seu navegador para ver o resultado. 🎉
+
+
+## Como contribuir
+
+- Faça um fork desse repositório;
+- Cria uma branch com a sua feature: `git checkout -b minha-feature`;
+- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
+- Faça push para a sua branch: `git push origin minha-feature`.
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+## Autores
+
+<table align="center">
+  <tr >
+    <td align="center"><a href="https://github.com/KZTN"><img src="https://avatars0.githubusercontent.com/u/6463299?s=460&u=4461e9ccc7bb327fc8183a09c3da015c832924d6&v=4" width="100px;" alt=""/><br /><sub><b>Kaio César</b></sub></a><br /><a href="https://github.com/kztn/BUZZ/commits?author=kztn" title="Code">💻</a> <a href="#kztn" title="Design">🎨</a></td>
+  <tr>
+</table>
+
+## 
+
+<p align="center">Feito com ♥ by KZTN</p>
