@@ -20,12 +20,11 @@ export default function Favorites({ history }) {
 
   function handleCheckAll() {
     arrlistcheckboxes = [];
-    if(checkall) {
+    if (checkall) {
       setCheckall(false);
       setIschecked(false);
       setListcheckboxes([]);
-    }
-    else {
+    } else {
       setCheckall(true);
       setIschecked(true);
       favorites.map((voucher, index) => {
@@ -40,6 +39,23 @@ export default function Favorites({ history }) {
   }
   function handleCloseModal() {
     setModalisopen(false);
+  }
+  async function handleDelFavorites() {
+    listcheckboxes.map(async (favitem) => {
+      await api
+        .delete(`/favorites/${favorites[favitem]._id}`, {
+          headers: { Authorization: `Bearer ${cookies.token}` },
+        })
+        .then(() => {
+          setListcheckboxes(
+            listcheckboxes.splice(listcheckboxes.indexOf(favitem), 1)
+          );
+          setFavorites(favorites.splice(favitem + 1, 1));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
   }
   function handleCheckBoxItem(index) {
     arrlistcheckboxes = listcheckboxes;
@@ -62,7 +78,25 @@ export default function Favorites({ history }) {
         })
         .then((response) => {
           setUser(response.data);
-          console.log(response.data.favorites);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    if (cookies.token) {
+      getUserData();
+    } else {
+      history.push('/BUZZ/login');
+    }
+  }, [favorites]);
+  useEffect(() => {
+    async function getUserData() {
+      await api
+        .get('/user', {
+          headers: { Authorization: `Bearer ${cookies.token}` },
+        })
+        .then((response) => {
+          setFavorites(response.data.favorites);
         })
         .catch((error) => {
           console.log(error);
@@ -74,24 +108,6 @@ export default function Favorites({ history }) {
       history.push('/BUZZ/login');
     }
   }, []);
-  useEffect(() => {
-    async function getUserData() {
-      await api
-        .get('/user', {
-          headers: { Authorization: `Bearer ${cookies.token}` },
-        })
-        .then((response) => {
-          console.log(response.data.favorites);
-          setFavorites(response.data.favorites);
-        });
-    }
-    if (cookies.token) {
-      getUserData();
-    } else {
-      history.push('/BUZZ/login');
-    }
-  }, []);
-
   return (
     <section id="favorites">
       <ActionsHeader />
@@ -110,8 +126,19 @@ export default function Favorites({ history }) {
           <ul>
             <div className="ul-header">
               <div className="header-actions">
-                <input type="checkbox" checked={checkall} onClick={handleCheckAll} id="checkall" />
-                <button disabled={!ischecked}>Excluir</button>
+                <input
+                  type="checkbox"
+                  checked={checkall}
+                  onClick={handleCheckAll}
+                  disabled={!favorites[0]}
+                  id="checkall"
+                />
+                <button
+                  disabled={!ischecked}
+                  onClick={() => handleDelFavorites()}
+                >
+                  Excluir
+                </button>
               </div>
               <div className="header-index">
                 <span>
@@ -120,15 +147,20 @@ export default function Favorites({ history }) {
               </div>
             </div>
             {!favorites[0] ? (
-              <li>Sua lista de favoritos está vazia</li>
+              <li style={{ width: '100vh' }}>
+                Sua lista de favoritos está vazia
+              </li>
             ) : (
               favorites.map((voucher, index) => (
                 <li key={voucher._id}>
                   <input
                     type="checkbox"
                     id="selectall"
-                    value={index}     
-                    checked={checkall || listcheckboxes.find((elementBox) => elementBox === index)}               
+                    value={index}
+                    checked={
+                      checkall ||
+                      listcheckboxes.find((elementBox) => elementBox === index)
+                    }
                     onChange={(e) => handleCheckBoxItem(e.target.value)}
                   />
                   <div className="li-content">
@@ -165,8 +197,15 @@ export default function Favorites({ history }) {
                     </div>
                   </div>
                   <div className="li-actions">
-                    <button disabled={(voucher.state === "active"? false: true)} onClick={() => evoqueModal(index)}>
-                      {voucher.state === "active"? <span>Ver Voucher</span> : <span>Anuncio pausado</span>}
+                    <button
+                      disabled={voucher.state === 'active' ? false : true}
+                      onClick={() => evoqueModal(index)}
+                    >
+                      {voucher.state === 'active' ? (
+                        <span>Ver Voucher</span>
+                      ) : (
+                        <span>Anuncio pausado</span>
+                      )}
                     </button>
                     <FaEllipsisV size={20} color="#555" />
                   </div>

@@ -7,30 +7,48 @@ import { useCookies } from 'react-cookie';
 
 export default function ModalVoucher({ user, voucher, onClick }) {
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
-
-  const { isfavorite, setIsfavorite } = useState(false);
+  const [isfavorite, setIsfavorite] = useState(false);
 
   async function handleFavorite() {
-    await api
-      .put(`/favorites/${voucher._id}`, {
-        headers: { Authorization: `Bearer ${cookies.token}` },
-      })
-      .then(() => {
-        if (isfavorite) {
-          setIsfavorite(false);
-        } else {
-          setIsfavorite(true);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (!isfavorite) {
+      console.log('recebi a ordem de adicionar');
+      await api
+        .put(`/favorites/${voucher._id}`, null, {
+          headers: { Authorization: `Bearer ${cookies.token}` },
+        })
+        .then(() => {
+          if (isfavorite) {
+            setIsfavorite(false);
+          } else {
+            setIsfavorite(true);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      console.log('recebi a ordem de deletar');
+      await api
+        .delete(`/favorites/${voucher._id}`, {
+          headers: { Authorization: `Bearer ${cookies.token}` },
+        })
+        .then(() => {
+          if (isfavorite) {
+            setIsfavorite(false);
+          } else {
+            setIsfavorite(true);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
-  user.favorites.map((favitem) => {
-    if (favitem == voucher._id) {
+  useEffect(() => {
+    if (user.favorites.find((favitem) => favitem._id === voucher._id)) {
       setIsfavorite(true);
     }
-  });
+  }, [voucher]);
   function popupWPP() {
     window.open(`https://wa.me/55${voucher.seller.phone}`, '_top');
   }
