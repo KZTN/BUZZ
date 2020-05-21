@@ -83,3 +83,15 @@ Visite http://localhost:3000 com o seu navegador para ver o resultado. 🎉
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+## Autores
+
+<table align="center">
+  <tr >
+    <td align="center"><a href="https://github.com/KZTN"><img src="https://avatars0.githubusercontent.com/u/6463299?s=460&u=4461e9ccc7bb327fc8183a09c3da015c832924d6&v=4" width="100px;" alt=""/><br /><sub><b>Kaio César</b></sub></a><br /><a href="https://github.com/kztn/BUZZ/commits?author=kztn" title="Code">💻</a> <a href="#kztn" title="Design">🎨</a></td>
+  <tr>
+</table>
+
+## 
+
+<p align="center">Feito com ♥ by KZTN</p>
